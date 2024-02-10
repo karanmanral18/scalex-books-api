@@ -8,7 +8,7 @@ export class UsersService {
     {
       id: 1,
       email: 'admin@scalex.club',
-      password: 'Scalex@123#',
+      password: 'admin@123#',
       role: RoleEnum.ADMIN,
     },
     {
