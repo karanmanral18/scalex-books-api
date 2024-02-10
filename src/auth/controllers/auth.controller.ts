@@ -5,7 +5,18 @@ import { AuthService } from '@/auth/auth.service';
 import { RoleGuard } from '../guards/role/role.guard';
 import { Roles } from '@/decorators/roles';
 import { RoleEnum } from '@/enum/role.enum';
+import { ApiHeader, ApiTags } from '@nestjs/swagger';
 
+@ApiHeader({
+  name: 'accept',
+  allowEmptyValue: false,
+  required: true,
+  schema: {
+    type: 'string',
+    enum: ['application/json'],
+  },
+})
+@ApiTags('Authorization Management')
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
